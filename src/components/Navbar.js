@@ -1,90 +1,52 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-export default function Navbar() {
-  const [isNavbarExpanded, setNavbarExpanded] = useState(false);
-
-  const handleNavbarToggle = () => {
-    setNavbarExpanded(!isNavbarExpanded);
-  };
-
+function Navbar() {
   return (
-    <nav className={`navbar navbar-expand-lg navbar-lg fixed-top ${isNavbarExpanded ? 'navbar-expanded' : ''}`}>
-      <style>
-        {`
-          @media (max-width: 767px) {
-            .btn-full-width {
-              width: 100%;
-              margin-top: 5px; /* Optional: Add some spacing */
-            }
-
-            .navbar-expanded {
-              background-color: ${isNavbarExpanded ? 'rgba(0, 0, 0, 0.8)' : 'transparent'} !important;
-            }
-
-            .d-md-flex {
-              flex-direction: row;
-              justify-content: space-between;
-            }
-
-            .navbar-toggler {
-              display: block;
-              background-color: transparent !important;
-              border: none;
-            }
-
-            .navbar-toggler:focus {
-              box-shadow: none;
-            }
-
-            .navbar-toggler-icon {
-              background-color: ${isNavbarExpanded ? 'white' : 'transparent'} !important;
-            }
-
-            .navbar-expand-lg .navbar-collapse {
-              padding: ${isNavbarExpanded ? '0.5rem 1rem' : '1rem'} !important;
-            }
-          }
-        `}
-      </style>
-      <div className="container-fluid d-md-flex">
-        <div className="d-flex align-items-center">
-          <a className="navbar-brand text-white d-none d-md-block" href="#"><strong>{"</Pratyush's Portfolio>"}</strong></a>
-        </div>
-        <button
-          className={`navbar-toggler ${isNavbarExpanded ? 'collapsed' : ''}`}
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded={isNavbarExpanded}
-          aria-label="Toggle navigation"
-          onClick={handleNavbarToggle}
-        >
-          <span className="navbar-toggler-icon"></span>
-        </button>
-        <div className={`collapse navbar-collapse ${isNavbarExpanded ? 'show' : ''}`} id="navbarNav">
-          <ul className="navbar-nav nav-underline mx-auto mb-2 mb-lg-0">
-            <li className="nav-item">
-              <a className="nav-link me-4 text-white" aria-current="page" href="#">Home</a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link me-4 text-white" href="#">About</a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link me-4 text-white" href="#">Services</a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link me-4 text-white" href="#">Blogs</a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link me-4 text-white" href="#">Contact</a>
-            </li>
-          </ul>
-          <button className="btn btn-warning btn-full-width" type="button">
-            Download Resume
+    <div>
+      <nav className="navbar navbar-dark bg-transparent fixed-top">
+        <div className="container-fluid">
+          {/* Conditional rendering of logo based on screen size */}
+          <a className="navbar-brand d-none d-sm-block" href="#"><strong>{"</Pratyush's Portfolio>"}</strong></a>
+          <button className="navbar-toggler ms-auto" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
+            <span className="navbar-toggler-icon"></span>
           </button>
+          <div className="offcanvas offcanvas-end text-bg-dark" tabIndex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel" style={{ maxWidth: '70%' }}>
+            <div className="offcanvas-header">
+            <button className="btn btn-warning mt-1" type="button">
+                Download Resume
+              </button>
+              {/* <h5 className="offcanvas-title" id="offcanvasDarkNavbarLabel">Pratyush's Portfolio</h5> */}
+              <button type="button" className="btn-close btn-close-white ms-auto" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div className="offcanvas-body">
+              <ul className="navbar-nav justify-content-end flex-grow-1 pe-3 mb-2">
+                <li className="nav-item">
+                  <a className="nav-link" aria-current="page" href="#">Home</a>
+                </li>
+                <li className="nav-item">
+                  <a className="nav-link" href="#">About</a>
+                </li>
+                <li className="nav-item">
+                  <a className="nav-link" href="#">Project</a>
+                </li>
+                <li className="nav-item">
+                  <a className="nav-link" href="#">Services</a>
+                </li>
+                <li className="nav-item">
+                  <a className="nav-link" href="#">Blogs</a>
+                </li>
+                <li className="nav-item">
+                  <a className="nav-link" href="#">Contact</a>
+                </li>
+              </ul>
+            </div>
+            <hr></hr>
+            <div className='container text-center mb-4'>copyright©pratyushraj</div>
+          </div>
         </div>
-      </div>
-    </nav>
+      </nav>
+    </div>
   );
 }
+
+export default Navbar;
