@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaFacebook, FaLinkedin, FaGithub } from 'react-icons/fa';
+import { FaLinkedin, FaGithub } from 'react-icons/fa';
 
 function Home() {
     const backgroundStyle = {
@@ -14,10 +14,30 @@ function Home() {
         alignItems: 'center',
     };
 
+    const socialButtonsContainer = {
+        display: 'flex',
+        gap: '20px', // Adjust the gap between buttons
+        marginTop: '20px', // Adjust the margin between buttons and text
+    };
+
+    const socialButtonStyle = {
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        padding: '10px',
+        borderRadius: '10px',
+        background: 'transparent', // Facebook color with transparency
+        color: '#fff',
+        textDecoration: 'none',
+        cursor: 'pointer',
+        transition: 'background 0.3s ease', // Add transform property for size change
+        border: '1px solid #fff',
+        overflow: 'hidden', // Hide overflow for rounded corners
+    };
+
     const socialIconStyle = {
-        fontSize: '2.0em', // Adjust the font size as needed
-        margin: '0 15px', // Adjust the margin between icons
-        cursor: 'pointer', // Add a pointer cursor for better UX
+        fontSize: '1.5em', // Adjust the font size as needed
+        marginRight: '8px', // Adjust the margin between icon and text
         transition: 'transform 0.3s ease', // Smooth transition for size change
     };
 
@@ -27,24 +47,27 @@ function Home() {
                 <h1 className="display-3 text-white text-center" style={{ fontFamily: 'cursive' }}>Pratyush Raj</h1>
             </div>
             <div>
-                <h3 className="text-white text-center" style={{ fontSize: '17px', fontFamily: 'monospace' }}>I'M A PASSIONATE SOFTWARE DEVELOPER FROM INDIA.</h3>
+                <h3 className="text-white text-center mt-2" style={{ fontSize: '18px', fontFamily: 'monospace' }}>I'M A PASSIONATE SOFTWARE DEVELOPER FROM INDIA.</h3>
             </div>
-            <div className='social-icon mt-3 text-white text-center'>
-                <FaFacebook
-                    style={socialIconStyle}
-                    onMouseOver={(e) => e.currentTarget.style.transform = 'scale(1.2)'}
-                    onMouseOut={(e) => e.currentTarget.style.transform = 'scale(1)'}
-                />
-                <FaLinkedin
-                    style={socialIconStyle}
-                    onMouseOver={(e) => e.currentTarget.style.transform = 'scale(1.2)'}
-                    onMouseOut={(e) => e.currentTarget.style.transform = 'scale(1)'}
-                />
-                <FaGithub
-                    style={socialIconStyle}
-                    onMouseOver={(e) => e.currentTarget.style.transform = 'scale(1.2)'}
-                    onMouseOut={(e) => e.currentTarget.style.transform = 'scale(1)'}
-                />
+            <div style={socialButtonsContainer}>
+                <div
+                    className='social-button'
+                    style={socialButtonStyle}
+                    onMouseEnter={(e) => e.currentTarget.firstChild.style.transform = 'scale(1.2)'} // Increase size on hover
+                    onMouseLeave={(e) => e.currentTarget.firstChild.style.transform = 'scale(1)'} // Reset size on hover out
+                >
+                    <FaLinkedin style={socialIconStyle} />
+                    Linkedin
+                </div>
+                <div
+                    className='social-button'
+                    style={socialButtonStyle}
+                    onMouseEnter={(e) => e.currentTarget.firstChild.style.transform = 'scale(1.2)'} // Increase size on hover
+                    onMouseLeave={(e) => e.currentTarget.firstChild.style.transform = 'scale(1)'} // Reset size on hover out
+                >
+                    <FaGithub style={socialIconStyle} />
+                    Github
+                </div>
             </div>
         </div>
     );
