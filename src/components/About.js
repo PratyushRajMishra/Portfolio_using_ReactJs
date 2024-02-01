@@ -2,9 +2,10 @@ import React from 'react'
 
 function About() {
   return (
+    <div>
     <div className='container'>
       <div className='container' style={{marginTop: '4rem'}}>
-        <h1 className='text-center display-3' style={{ fontFamily: 'monospace' }}>About</h1>
+        <h1 className='text-center display-2' style={{ fontFamily: 'serif' }}>About</h1>
       </div>
       <p className='mx-1 my-3' style={{ fontFamily: 'Arial, sans-serif', fontSize: '17px', color: '#333', lineHeight: 1.6, marginBottom: '20px', textAlign: 'justify' }}>
         Welcome to my portfolio! I'm <strong>Pratyush Raj</strong>, a dedicated software developer driven by a passion for crafting efficient
@@ -103,10 +104,10 @@ function About() {
             </div>
           </div>
         </div>
-
       </div>
-
     </div>
+    </div>
+    
   )
 }
 
