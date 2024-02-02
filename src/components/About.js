@@ -64,7 +64,7 @@ function About() {
         <div className="col-sm-3 mb-3 mb-sm-0">
           <div className="card text-bg-dark">
             <div className="card-header">Frontend</div>
-            <div className="card-body" style={{ height: '80px' }}>
+            <div className="card-body" style={{ height: 'auto' }}>
               <span className="badge badge-primary mb-2 border border-primary p-2">HTML</span>&nbsp;&nbsp;
               <span className="badge badge-secondary mb-2 border border-secondary p-2">CSS</span>&nbsp;&nbsp;
               <span className="badge badge-success mb-2 border border-success p-2">JavaScript</span>&nbsp;&nbsp;
@@ -76,7 +76,7 @@ function About() {
         <div className="col-sm-3 mb-3 mb-sm-0">
           <div className="card text-bg-dark">
             <div className="card-header">Backend</div>
-            <div className="card-body" style={{ height: '80px' }}>
+            <div className="card-body" style={{ height: 'auto' }}>
               <span className="badge badge-primary mb-2 border border-primary p-2">Node Js</span>&nbsp;&nbsp;
               <span className="badge badge-secondary mb-2 border border-secondary p-2">Firebase Auth</span>
             </div>
@@ -86,7 +86,7 @@ function About() {
         <div className="col-sm-3 mb-3 mb-sm-0">
           <div className="card text-bg-dark">
             <div className="card-header">Database</div>
-            <div className="card-body" style={{ height: '80px' }}>
+            <div className="card-body" style={{ height: 'auto' }}>
               <span className="badge badge-primary mb-2 border border-primary p-2">MySql</span>&nbsp;&nbsp;
               <span className="badge badge-secondary mb-2 border border-secondary p-2">MongoDB</span>&nbsp;&nbsp;
               <span className="badge badge-warning mb-2 border border-warning p-2">Firebase</span>
@@ -97,7 +97,7 @@ function About() {
         <div className="col-sm-3 mb-3 mb-sm-0">
           <div className="card text-bg-dark">
             <div className="card-header">Other</div>
-            <div className="card-body" style={{ height: '80px' }}>
+            <div className="card-body" style={{ height: 'auto' }}>
               <span className="badge badge-primary mb-2 border border-primary p-2">Flutter</span>&nbsp;&nbsp;
               <span className="badge badge-secondary mb-2 border border-secondary p-2">Java Swing</span>&nbsp;&nbsp;
               <span className="badge badge-info mb-2 border border-info p-2">GIT</span>

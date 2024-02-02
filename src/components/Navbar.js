@@ -30,7 +30,7 @@ function Navbar() {
                   <a className="nav-link" href="#">Project</a>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="#">Services</a>
+                  <a className="nav-link disabled" aria-disabled="true">Services</a>
                 </li>
                 <li className="nav-item">
                   <a className="nav-link" href="#">Blogs</a>
