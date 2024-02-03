@@ -3,7 +3,7 @@ import { FaLinkedin, FaGithub } from 'react-icons/fa';
 
 function Home() {
     const backgroundStyle = {
-        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.9)), url('https://pratyushrajmishra.github.io/pratyushrajmishra_website/assets/service.png')`,
+        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.9)), url('/images/picture.png')`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
@@ -50,7 +50,10 @@ function Home() {
                 <h3 className="text-white text-center mt-2" style={{ fontSize: '18px', fontFamily: 'monospace' }}>I'M A PASSIONATE SOFTWARE DEVELOPER FROM INDIA.</h3>
             </div>
             <div style={socialButtonsContainer}>
-                <div
+                <a
+                    href="https://www.linkedin.com/in/pratyush-raj-/"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className='social-button'
                     style={socialButtonStyle}
                     onMouseEnter={(e) => e.currentTarget.firstChild.style.transform = 'scale(1.2)'} // Increase size on hover
@@ -58,8 +61,11 @@ function Home() {
                 >
                     <FaLinkedin style={socialIconStyle} />
                     Linkedin
-                </div>
-                <div
+                </a>
+                <a
+                    href="https://github.com/PratyushRajMishra"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className='social-button'
                     style={socialButtonStyle}
                     onMouseEnter={(e) => e.currentTarget.firstChild.style.transform = 'scale(1.2)'} // Increase size on hover
@@ -67,7 +73,7 @@ function Home() {
                 >
                     <FaGithub style={socialIconStyle} />
                     Github
-                </div>
+                </a>
             </div>
         </div>
     );

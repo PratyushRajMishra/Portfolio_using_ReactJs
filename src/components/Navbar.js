@@ -5,8 +5,8 @@ function Navbar() {
     <div>
       <nav className="navbar navbar-dark bg-transparent fixed-top">
         <div className="container-fluid">
-          {/* Conditional rendering of logo based on screen size */}
-          <a className="navbar-brand d-none d-sm-block" href="#"><strong>{"</Pratyush's Portfolio>"}</strong></a>
+          {/* Conditional rendering of logo based on screen size
+          <a className="navbar-brand d-none d-sm-block" href="#"><strong>{"</Pratyush's Portfolio>"}</strong></a> */}
           <button className="navbar-toggler ms-auto" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
           </button>
@@ -30,13 +30,13 @@ function Navbar() {
                   <a className="nav-link" href="#">Project</a>
                 </li>
                 <li className="nav-item">
+                  <a className="nav-link" href="#">Contact</a>
+                </li>
+                <li className="nav-item">
                   <a className="nav-link disabled" aria-disabled="true">Services</a>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="#">Blogs</a>
-                </li>
-                <li className="nav-item">
-                  <a className="nav-link" href="#">Contact</a>
+                  <a className="nav-link disabled" aria-disabled="true">Blogs</a>
                 </li>
               </ul>
             </div>

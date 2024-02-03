@@ -2,6 +2,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+  background-color: whitesmoke;
 }
 
 nav{
@@ -42,5 +43,26 @@ nav{
 /* Resizer (for resizing the textarea or text input) */
 ::-webkit-resizer {
   background: #888;
+}
+
+
+.social-icon {
+  display: inline-block;
+  background-color: #168ad8; /* Change the background color as needed */
+  border-radius: 50%;
+  padding: 10px;
+}
+
+.social-icon:hover {
+background-color: #3498db; /* Change the background color as needed */
+}
+
+.icon {
+  color: white; /* Change the icon color as needed */
+}
+
+.error-message {
+color: red;
+margin-bottom: 10px;  /* Optional: Add some spacing below the error message */
 }
 

@@ -14,10 +14,10 @@ function About() {
         challenges, my commitment to innovation shines through. Explore my journey, skills, and projects, and let's connect to
         explore exciting opportunities in the ever-evolving realm of software development.
       </p>
-      <div className="accordion accordion-flush" id="accordionFlushExample">
-        <div className="accordion-item">
+      <div className="accordion accordion-flush"  id="accordionFlushExample">
+        <div className="accordion-item" style={{backgroundColor: 'whitesmoke'}}>
           <h2 className="accordion-header">
-            <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+            <button className="accordion-button collapsed" style={{backgroundColor: 'whitesmoke'}} type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
               <strong>1. Frontend Developer</strong>
             </button>
           </h2>
@@ -29,9 +29,9 @@ function About() {
               let's collaborate to bring your frontend visions to life!</div>
           </div>
         </div>
-        <div className="accordion-item">
+        <div className="accordion-item" style={{backgroundColor: 'whitesmoke'}}>
           <h2 className="accordion-header">
-            <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+            <button className="accordion-button collapsed" style={{backgroundColor: 'whitesmoke'}} type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
               <strong>2. Backend Developer</strong>
             </button>
           </h2>
@@ -43,9 +43,9 @@ function About() {
               infrastructure to meet the demands of modern web development. </div>
           </div>
         </div>
-        <div className="accordion-item">
+        <div className="accordion-item" style={{backgroundColor: 'whitesmoke'}}>
           <h2 className="accordion-header">
-            <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+            <button className="accordion-button collapsed" style={{backgroundColor: 'whitesmoke'}} type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
               <strong>3. Flutter Developer</strong>
             </button>
           </h2>
