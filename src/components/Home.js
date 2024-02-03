@@ -42,7 +42,7 @@ function Home() {
     };
 
     return (
-        <div className='' style={backgroundStyle}>
+        <div id="home" style={backgroundStyle}>
             <div>
                 <h1 className="display-3 text-white text-center" style={{ fontFamily: 'cursive' }}>Pratyush Raj</h1>
             </div>

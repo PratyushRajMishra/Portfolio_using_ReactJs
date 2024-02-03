@@ -2,7 +2,7 @@ import React from 'react'
 
 function About() {
   return (
-    <div>
+    <div id="about">
     <div className='container'>
       <div className='container' style={{marginTop: '4rem'}}>
         <h1 className='text-center display-2' style={{ fontFamily: 'serif' }}>About</h1>

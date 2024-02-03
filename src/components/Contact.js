@@ -7,7 +7,7 @@ import ContactForm from './ContactForm'
 
 function Contact() {
     return (
-        <div className='container'>
+        <div className='container' id="contact">
             <div className='container' style={{ marginTop: '5rem' }}>
                 <h1 className='text-center display-2' style={{ fontFamily: 'serif' }}>Contact</h1>
             </div>
