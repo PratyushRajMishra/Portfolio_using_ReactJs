@@ -10,7 +10,7 @@ const Project = () => {
     };
 
     return (
-        <div id="project" style={{backgroundColor: 'black', paddingBottom: '1rem',}}>
+        <div id="project" style={{backgroundColor: '#000000d6', paddingBottom: '1rem',}}>
              <div className='container' style={{ marginTop: '5rem' }}>
              <div style={{ height: '2rem' }}></div>
                 <h1 className='text-center display-2' style={{ fontFamily: 'serif', color: 'white'}}>Projects</h1>
