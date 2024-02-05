@@ -7,7 +7,7 @@ function About() {
       <div className='container' style={{marginTop: '4rem'}}>
         <h1 className='text-center display-2' style={{ fontFamily: 'serif' }}>About</h1>
       </div>
-      <p className='mx-1 my-3' style={{ fontFamily: 'Arial, sans-serif', fontSize: '17px', color: '#333', lineHeight: 1.6, marginBottom: '20px', textAlign: 'justify' }}>
+      <p className='mx-1 my-3' style={{ fontFamily: 'Arial, sans-serif', fontSize: '18px', color: '#333', lineHeight: 1.6, marginBottom: '20px', textAlign: 'justify' }}>
         Welcome to my portfolio! I'm <strong>Pratyush Raj</strong>, a dedicated software developer driven by a passion for crafting efficient
         and user-friendly applications. Armed with an 'A LEVEL' in IT from NIELIT, I bring a solid foundation in computer science
         principles and a wealth of experience from diverse projects. Whether collaborating with dynamic teams or tackling complex

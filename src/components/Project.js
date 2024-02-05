@@ -10,11 +10,12 @@ const Project = () => {
     };
 
     return (
-        <div id="project">
-            <div className='container' style={{ marginTop: '5rem' }}>
-                <h1 className='text-center display-2' style={{ fontFamily: 'serif' }}>Projects</h1>
+        <div id="project" style={{backgroundColor: 'black', paddingBottom: '1rem',}}>
+             <div className='container' style={{ marginTop: '5rem' }}>
+             <div style={{ height: '2rem' }}></div>
+                <h1 className='text-center display-2' style={{ fontFamily: 'serif', color: 'white'}}>Projects</h1>
             </div>
-            <div className='container my-4'>
+            <div className='container my-5'>
                 <div className='row'>
                     <div className='col-md-3 mb-4'>
                         <a href="https://github.com/PratyushRajMishra/ChatON_Personel_ChatApp_using_Flutter" style={cardStyle} target="_blank" rel="noopener noreferrer">
