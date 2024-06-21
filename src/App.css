@@ -1,0 +1,61 @@
+.background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 20vh;
+  object-fit: cover;
+  overflow: hidden;
+}
+
+/* Existing CSS for the card and text */
+.card-body {
+  position: relative;
+  align-items: center;
+}
+
+/* Responsive text */
+.title {
+  font-size: 4em;
+  font-family: 'Lobster, cursive';
+  color: white;
+}
+
+.subtitle {
+  font-size: 1.0em;
+  font-family: 'Roboto, sans-serif';
+}
+
+/* Media query for small screens */
+@media (max-width: 768px) {
+  .title {
+      font-size: 2.0em; /* Smaller font size for small screens */
+  }
+
+  .subtitle {
+      font-size: 0.8em; /* Smaller font size for small screens */
+  }
+}
+
+
+
+
+.green-dot {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    background-color: #4CAF50;
+    border-radius: 50%;
+    margin: 0 5px; /* Adjust margin for spacing between dots */
+  }
+  
+  .left-dot {
+    top: 10px;
+    left: 10px;
+  }
+  
+  .right-dot {
+    top: 30px;
+    left: 10px;
+  }
+  

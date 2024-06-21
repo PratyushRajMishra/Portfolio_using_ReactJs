@@ -2,22 +2,9 @@ import React from 'react';
 import { FaLinkedin, FaGithub } from 'react-icons/fa';
 
 function Home() {
-    const backgroundStyle = {
-        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.9)), url('/images/picture.png')`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat',
-        height: '100vh',
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'center',
-        alignItems: 'center',
-    };
-
     const socialButtonsContainer = {
         display: 'flex',
         gap: '20px', // Adjust the gap between buttons
-        marginTop: '20px', // Adjust the margin between buttons and text
     };
 
     const socialButtonStyle = {
@@ -26,7 +13,7 @@ function Home() {
         justifyContent: 'center',
         padding: '10px',
         borderRadius: '10px',
-        background: 'transparent', // Facebook color with transparency
+        background: 'transparent', // Background color with transparency
         color: '#fff',
         textDecoration: 'none',
         cursor: 'pointer',
@@ -42,38 +29,59 @@ function Home() {
     };
 
     return (
-        <div id="home" style={backgroundStyle}>
-            <div>
-                <h1 className="display-3 text-white text-center" style={{ fontFamily: 'cursive' }}>Pratyush Raj</h1>
-            </div>
-            <div>
-                <h3 className="text-white text-center mt-2" style={{ fontSize: '18px', fontFamily: 'monospace' }}>I'M A PASSIONATE SOFTWARE DEVELOPER FROM INDIA.</h3>
-            </div>
-            <div style={socialButtonsContainer}>
-                <a
-                    href="https://www.linkedin.com/in/pratyush-raj-/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className='social-button'
-                    style={socialButtonStyle}
-                    onMouseEnter={(e) => e.currentTarget.firstChild.style.transform = 'scale(1.2)'} // Increase size on hover
-                    onMouseLeave={(e) => e.currentTarget.firstChild.style.transform = 'scale(1)'} // Reset size on hover out
-                >
-                    <FaLinkedin style={socialIconStyle} />
-                    Linkedin
-                </a>
-                <a
-                    href="https://github.com/PratyushRajMishra"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className='social-button'
-                    style={socialButtonStyle}
-                    onMouseEnter={(e) => e.currentTarget.firstChild.style.transform = 'scale(1.2)'} // Increase size on hover
-                    onMouseLeave={(e) => e.currentTarget.firstChild.style.transform = 'scale(1)'} // Reset size on hover out
-                >
-                    <FaGithub style={socialIconStyle} />
-                    Github
-                </a>
+        <div className="card mt-3 container-sm" style={{ background: 'transparent', border: 'none', position: 'relative' }}>
+            <img
+                src="images/cover.png"
+                alt="Background"
+                className="background-image"
+            />
+             <div className="card-body d-flex align-items-center justify-content-between" style={{ position: 'relative', zIndex: 2, height: '20vh' }}>
+                <div className="d-flex align-items-center">
+                    <div className="mr-3">
+                        <img
+                            src="images/picture.png"
+                            alt="Profile"
+                            className="rounded-circle"
+                            style={{
+                                width: '130px',
+                                height: '130px',
+                                objectFit: 'cover',
+                                border: '5px solid white', // White border
+                                borderRadius: '50%' // Circular border
+                            }}
+                        />
+                    </div>
+                    <div style={{ marginLeft: '20px' }}> {/* Add margin-left to the text container */}
+                        <h5 className="card-title mb-1 title">Pratyush Raj</h5>
+                        <h6 className="card-subtitle mb-2 text-light"> @Flutter Developer</h6>
+                    </div>
+                </div>
+                <div className="d-none d-md-flex" style={socialButtonsContainer}> {/* Hide on small screens */}
+                    <a
+                        href="https://www.linkedin.com/in/pratyush-raj-/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className='social-button'
+                        style={socialButtonStyle}
+                        onMouseEnter={(e) => e.currentTarget.firstChild.style.transform = 'scale(1.2)'} // Increase size on hover
+                        onMouseLeave={(e) => e.currentTarget.firstChild.style.transform = 'scale(1)'} // Reset size on hover out
+                    >
+                        <FaLinkedin style={socialIconStyle} />
+                        Linkedin
+                    </a>
+                    <a
+                        href="https://github.com/PratyushRajMishra"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className='social-button'
+                        style={socialButtonStyle}
+                        onMouseEnter={(e) => e.currentTarget.firstChild.style.transform = 'scale(1.2)'} // Increase size on hover
+                        onMouseLeave={(e) => e.currentTarget.firstChild.style.transform = 'scale(1)'} // Reset size on hover out
+                    >
+                        <FaGithub style={socialIconStyle} />
+                        Github
+                    </a>
+                </div>
             </div>
         </div>
     );

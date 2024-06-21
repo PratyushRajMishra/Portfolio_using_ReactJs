@@ -9,7 +9,7 @@ function About() {
       </div>
       <p className='mx-1 my-3' style={{ fontFamily: 'Arial, sans-serif', fontSize: '18px', color: '#333', lineHeight: 1.6, marginBottom: '20px', textAlign: 'justify' }}>
         Welcome to my portfolio! I'm <strong>Pratyush Raj</strong>, a dedicated software developer driven by a passion for crafting efficient
-        and user-friendly applications. Armed with an 'A LEVEL' in IT from NIELIT, I bring a solid foundation in computer science
+        and user-friendly applications. Armed with an 'B LEVEL' in IT from NIELIT, I bring a solid foundation in computer science
         principles and a wealth of experience from diverse projects. Whether collaborating with dynamic teams or tackling complex
         challenges, my commitment to innovation shines through. Explore my journey, skills, and projects, and let's connect to
         explore exciting opportunities in the ever-evolving realm of software development.

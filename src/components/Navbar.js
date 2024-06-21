@@ -8,23 +8,36 @@ function Navbar() {
 
   const handleDownloadResume = () => {
     // Assuming your resume is named "Pratyush_Raj_Resume.pdf"
-    const resumeUrl = '/images/Resume.pdf';
+    const resumeUrl = '/images/Pratyush_Raj_Resume.pdf';
 
     // Create a link element
     const link = document.createElement('a');
     link.href = resumeUrl;
     link.target = '_blank'; // Open the link in a new tab
-    link.download = 'Resume.pdf'; // Set the download attribute
+    link.download = 'Pratyush_Resume.pdf'; // Set the download attribute
     link.click(); // Trigger the click event to start the download
   };
 
   return (
     <div>
-      <nav className="navbar navbar-dark bg-transparent fixed-top">
-        <div className="container-fluid">
-          {/* Conditional rendering of logo based on screen size
-          <a className="navbar-brand d-none d-sm-block" href="#"><strong>{"</Pratyush's Portfolio>"}</strong></a> */}
-          <button className="navbar-toggler ms-auto" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
+      <nav className="navbar navbar-dark" style={{ backgroundColor: '#000000d6' }}>
+        <div className="container-fluid position-relative d-flex align-items-center">
+          {/* Green dot circles */}
+          <div className="d-flex align-items-center">
+            <div className="green-dot left-dot"></div>
+            <div className="green-dot right-dot"></div>
+          </div>
+
+          {/* Center spacer to push items to the right */}
+          <div className="flex-grow-1"></div>
+
+          {/* Download Resume Button */}
+          <button className="btn btn-success me-2" style={{margin: '5px'}} type="button" onClick={handleDownloadResume}>
+            Download Resume
+          </button>
+
+          {/* Menu button */}
+          <button className="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
           </button>
           <div className="offcanvas offcanvas-end text-bg-dark" tabIndex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel" style={{ maxWidth: '70%' }}>
@@ -94,7 +107,7 @@ function Navbar() {
                     className="nav-link disabled"
                     aria-disabled="true"
                     activeClass="active"
-                    to="servises"
+                    to="services"
                     spy={true}
                     smooth={true}
                     offset={-30}

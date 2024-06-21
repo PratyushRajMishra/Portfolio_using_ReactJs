@@ -20,7 +20,7 @@ function Contact() {
                         {/* Location */}
                         <div className="col text-center p-4">
                             <FaMapMarkerAlt className="icon" style={{ fontSize: '2.0rem', color: 'black' }} />
-                            <p className="card-text mt-3">Gkp, UP, IN, 273001</p>
+                            <p className="card-text mt-3">Gorakhpur, UP, IN, 273001</p>
                         </div>
 
                         {/* Email */}
@@ -53,7 +53,7 @@ function Contact() {
                 <a href="https://www.instagram.com/__royal__bhumihar__/" className="social-icon mx-2" target="_blank" rel="noopener noreferrer">
                     <FaInstagram className="icon" style={{ fontSize: '1.5rem' }} />
                 </a>
-                <a href="https://twitter.com/PratyushRajMis1" className="social-icon mx-2" target="_blank" rel="noopener noreferrer">
+                <a href="https://twitter.com/_Q_matrix" className="social-icon mx-2" target="_blank" rel="noopener noreferrer">
                     <FaXTwitter className="icon" style={{ fontSize: '1.5rem' }} />
                 </a>
                 <a href="https://profile.indeed.com/?hl=en_IN&co=IN&from=gnav-homepage&_ga=2.60316969.56304579.1706941903-546330254.1706848408" className="social-icon mx-2" target="_blank" rel="noopener noreferrer">
