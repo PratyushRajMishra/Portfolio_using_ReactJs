@@ -1,7 +1,6 @@
 import React, { useRef, useState } from "react";
-// import "./App.css"; // Import your CSS file for styling
 
-function App() {
+function ContactForm() {
   const formRef = useRef();
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
@@ -15,7 +14,6 @@ function App() {
     const name = formData.get("name");
     const email = formData.get("email");
     const message = formData.get("message");
-    
 
     if (!name || !email || !message) {
       setError("All fields are required.*");
@@ -49,57 +47,53 @@ function App() {
   };
 
   return (
-    <div className="container">
+    <div>
       {submitted ? (
         <div className="thank-you-message">
-          <h3 className="text-center">Thank you for your submission!</h3>
-          <p className="text-center">We'll get back to you soon.</p>
+          <h3>Thank you for your submission!</h3>
+          <p>We&apos;ll get back to you soon.</p>
         </div>
       ) : (
-        <form className="my-form" onSubmit={onSubmit} ref={formRef}>
+        <form className="contact-form" onSubmit={onSubmit} ref={formRef}>
           {error && <div className="error-message">{error}</div>}
-          <div className="row mb-4">
-            <div className="col">
+          <div className="form-row">
+            <div>
               <input
                 type="text"
-                className="form-control"
+                className="input-control"
                 name="name"
                 placeholder="Your Name"
-                aria-label="First name"
+                aria-label="Your name"
                 disabled={submitting}
-                style={{backgroundColor: '#ffffff5e'}}
               />
             </div>
-            <div className="col">
+            <div>
               <input
                 type="email"
-                className="form-control"
+                className="input-control"
                 name="email"
                 placeholder="Your Email"
-                aria-label="Last name"
+                aria-label="Your email"
                 disabled={submitting}
-                style={{backgroundColor: '#ffffff5e'}}
               />
             </div>
           </div>
-          <div className="mb-3">
+          <div>
             <textarea
-              className="form-control"
+              className="input-control"
               name="message"
-              id="exampleFormControlTextarea1"
               placeholder="Message"
               rows="5"
               disabled={submitting}
-              style={{backgroundColor: '#ffffff5e'}}
             ></textarea>
           </div>
-          <button type="submit" className="btn btn-success" style={{ borderRadius: '25px' }} disabled={submitting}>
+          <button type="submit" className="primary-cta" disabled={submitting}>
             {submitting ? "Submitting..." : "Drop Message!"}
           </button>
         </form>
       )}
     </div>
   );
-}
+} 
 
-export default App;
+export default ContactForm;

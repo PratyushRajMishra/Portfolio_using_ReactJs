@@ -1,90 +1,140 @@
-import React from 'react';
-import { FaLinkedin, FaGithub } from 'react-icons/fa';
+import React, { useRef, useState } from 'react';
+import { FaLinkedinIn, FaGithub } from 'react-icons/fa';
+import { FiArrowDownRight, FiCode, FiLayers, FiSmartphone } from 'react-icons/fi';
+import { Link } from 'react-scroll';
 
 function Home() {
-    const socialButtonsContainer = {
-        display: 'flex',
-        gap: '20px', // Adjust the gap between buttons
-    };
+  const heroRef = useRef(null);
+  const [tiltStyle, setTiltStyle] = useState({});
 
-    const socialButtonStyle = {
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        padding: '10px',
-        borderRadius: '10px',
-        background: 'transparent', // Background color with transparency
-        color: '#fff',
-        textDecoration: 'none',
-        cursor: 'pointer',
-        transition: 'background 0.3s ease', // Add transform property for size change
-        border: '1px solid #fff',
-        overflow: 'hidden', // Hide overflow for rounded corners
-    };
+  const handleHeroMove = (event) => {
+    if (!heroRef.current || window.innerWidth < 992) return;
+    const rect = heroRef.current.getBoundingClientRect();
+    const x = event.clientX - rect.left;
+    const y = event.clientY - rect.top;
+    const rotateY = ((x / rect.width) - 0.5) * 3;
+    const rotateX = (0.5 - (y / rect.height)) * 2.6;
 
-    const socialIconStyle = {
-        fontSize: '1.5em', // Adjust the font size as needed
-        marginRight: '8px', // Adjust the margin between icon and text
-        transition: 'transform 0.3s ease', // Smooth transition for size change
-    };
+    setTiltStyle({
+      transform: `perspective(1200px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`,
+    });
+  };
 
-    return (
-        <div className="card mt-3 container-sm" style={{ background: 'transparent', border: 'none', position: 'relative' }}>
-            <img
-                src="images/cover.png"
-                alt="Background"
-                className="background-image"
-            />
-             <div className="card-body d-flex align-items-center justify-content-between" style={{ position: 'relative', zIndex: 2, height: '20vh' }}>
-                <div className="d-flex align-items-center">
-                    <div className="mr-3">
-                        <img
-                            src="images/picture.png"
-                            alt="Profile"
-                            className="rounded-circle"
-                            style={{
-                                width: '130px',
-                                height: '130px',
-                                objectFit: 'cover',
-                                border: '5px solid white', // White border
-                                borderRadius: '50%' // Circular border
-                            }}
-                        />
-                    </div>
-                    <div style={{ marginLeft: '20px' }}> {/* Add margin-left to the text container */}
-                        <h5 className="card-title mb-1 title">Pratyush Raj</h5>
-                        <h6 className="card-subtitle mb-2 text-light"> @Flutter Developer</h6>
-                    </div>
-                </div>
-                <div className="d-none d-md-flex" style={socialButtonsContainer}> {/* Hide on small screens */}
-                    <a
-                        href="https://www.linkedin.com/in/pratyush-raj-/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className='social-button'
-                        style={socialButtonStyle}
-                        onMouseEnter={(e) => e.currentTarget.firstChild.style.transform = 'scale(1.2)'} // Increase size on hover
-                        onMouseLeave={(e) => e.currentTarget.firstChild.style.transform = 'scale(1)'} // Reset size on hover out
-                    >
-                        <FaLinkedin style={socialIconStyle} />
-                        Linkedin
-                    </a>
-                    <a
-                        href="https://github.com/PratyushRajMishra"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className='social-button'
-                        style={socialButtonStyle}
-                        onMouseEnter={(e) => e.currentTarget.firstChild.style.transform = 'scale(1.2)'} // Increase size on hover
-                        onMouseLeave={(e) => e.currentTarget.firstChild.style.transform = 'scale(1)'} // Reset size on hover out
-                    >
-                        <FaGithub style={socialIconStyle} />
-                        Github
-                    </a>
-                </div>
+  const resetHeroTilt = () => {
+    setTiltStyle({
+      transform: 'perspective(1200px) rotateX(0deg) rotateY(0deg)',
+    });
+  };
+
+  return (
+    <section id="home" className="section hero-section">
+      <div
+        ref={heroRef}
+        className="container hero-card"
+        onMouseMove={handleHeroMove}
+        onMouseLeave={resetHeroTilt}
+        style={tiltStyle}
+      >
+        <div className="hero-main">
+          <div className="hero-left">
+            <div className="hero-copy">
+              <p className="eyebrow">Hi, I&apos;m Pratyush Raj</p>
+              <h1>
+                Building products with <span>clarity</span>, speed, and impact.
+              </h1>
+              <p className="subtitle">Full-stack and Flutter developer crafting modern, scalable, and user-focused digital experiences.</p>
             </div>
+
+            <div className="hero-stats">
+              <article>
+                <strong>10+</strong>
+                <span>Projects Delivered</span>
+              </article>
+              <article>
+                <strong>3+</strong>
+                <span>Years of Building</span>
+              </article>
+              <article>
+                <strong>Open Source</strong>
+                <span>Package Contributor</span>
+              </article>
+            </div>
+
+            <div className="hero-badges">
+              <span>
+                <FiCode />
+                React UI
+              </span>
+              <span>
+                <FiLayers />
+                Node APIs
+              </span>
+              <span>
+                <FiSmartphone />
+                Flutter Apps
+              </span>
+            </div>
+
+            <div className="hero-cta">
+              <Link className="primary-cta" to="project" smooth={true} offset={-80} duration={350}>
+                Explore Projects <FiArrowDownRight />
+              </Link>
+              <Link className="ghost-cta" to="contact" smooth={true} offset={-80} duration={350}>
+                Let&apos;s Connect
+              </Link>
+            </div>
+
+            <div className="hero-social">
+              <a href="https://www.linkedin.com/in/pratyush-raj-/" target="_blank" rel="noopener noreferrer" className="social-pill">
+                <FaLinkedinIn />
+                LinkedIn
+              </a>
+              <a href="https://github.com/PratyushRajMishra" target="_blank" rel="noopener noreferrer" className="social-pill">
+                <FaGithub />
+                GitHub
+              </a>
+            </div>
+          </div>
+
+          <div className="hero-scene-wrap" aria-hidden="true">
+            <div className="hero-visual">
+              <div className="hero-visual-orb orb-one"></div>
+              <div className="hero-visual-orb orb-two"></div>
+              <div className="hero-visual-grid"></div>
+              <div className="hero-profile-panel">
+                <img src="images/picture.png" alt="Pratyush Raj" className="profile-photo" />
+                <div className="hero-profile-copy">
+                  <strong>Pratyush Raj</strong>
+                  <span>Full-stack & Flutter Developer</span>
+                </div>
+                
+              </div>
+              
+              <div className="hero-visual-card card-skill-1">
+                <p>Languages</p>
+                <strong>JavaScript, Dart, Python</strong>
+              </div>
+
+              <div className="hero-visual-card card-skill-2">
+                <p>Frameworks</p>
+                <strong>React, Node.js, Flutter</strong>
+              </div>
+
+              <div className="hero-visual-card card-skill-3">
+                <p>Tools & DB</p>
+                <strong>Git, Firebase, MongoDB</strong>
+              </div>
+              
+              <div className="hero-visual-card card-focus">
+                <p>Current Focus</p>
+                <strong>Scalable products with polished UX</strong>
+              </div>
+            </div>
+          </div>
         </div>
-    );
+      </div>
+    </section>
+  );
 }
 
 export default Home;

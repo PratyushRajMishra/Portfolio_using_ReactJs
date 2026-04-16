@@ -1,68 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=DM+Serif+Display:ital@0;1&display=swap');
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
-  padding: 0;
-  font-family: sans-serif;
-  background-color: whitesmoke;
+  color: #1e1f2f;
+  font-family: 'Space Grotesk', sans-serif;
 }
 
-nav{
-  font-family: 'Courier New', Courier, monospace;
-  font-size: large;
+h1,
+h2,
+h3,
+h4 {
+  margin: 0 0 0.55rem;
+  font-family: 'DM Serif Display', serif;
+  letter-spacing: 0.01em;
 }
 
-/* Width of the scrollbar */
+p {
+  line-height: 1.6;
+}
+
 ::-webkit-scrollbar {
-  width: 7px;
+  width: 9px;
 }
 
-/* Track (the area where the scrollbar is) */
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: #e8e4dc;
 }
 
-/* Handle (the draggable part of the scrollbar) */
 ::-webkit-scrollbar-thumb {
-  background: #888;
+  background: #8e8aa3;
+  border-radius: 10px;
 }
 
-/* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #555;
+  background: #69667f;
 }
-
-/* Button at the top and bottom of the scrollbar */
-::-webkit-scrollbar-button {
-  display: none; /* Hide the button */
-}
-
-/* Corner between the vertical and horizontal scrollbars */
-::-webkit-scrollbar-corner {
-  background: #f1f1f1;
-}
-
-/* Resizer (for resizing the textarea or text input) */
-::-webkit-resizer {
-  background: #888;
-}
-
-
-.social-icon {
-  display: inline-block;
-  background-color: #168ad8; /* Change the background color as needed */
-  border-radius: 50%;
-  padding: 10px;
-}
-
-.social-icon:hover {
-background-color: #3498db; /* Change the background color as needed */
-}
-
-.icon {
-  color: white; /* Change the icon color as needed */
-}
-
-.error-message {
-color: red;
-margin-bottom: 10px;  /* Optional: Add some spacing below the error message */
-}
-
