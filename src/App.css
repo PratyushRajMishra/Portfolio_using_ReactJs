@@ -599,6 +599,31 @@
   animation: orbFloat2 10s ease-in-out infinite;
 }
 
+@media (max-width: 992px) {
+  .hero-visual {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    padding: 16px;
+    min-height: auto;
+  }
+
+  /* 🔥 THIS IS THE MAIN FIX */
+  .hero-visual-card,
+  .hero-profile-panel {
+    position: relative !important;
+    top: unset !important;
+    left: unset !important;
+    right: unset !important;
+    bottom: unset !important;
+    transform: none !important;
+    width: 100%;
+    max-width: 320px;
+  }
+}
+
 .hero-visual-grid {
   position: absolute;
   inset: 0;
@@ -1440,10 +1465,24 @@
     justify-content: center;
   }
 
+@media (max-width: 992px) {
   .hero-visual {
-    max-width: 100%;
-    min-height: 380px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
   }
+}
+
+@media (max-width: 992px) {
+  .hero-main {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .hero-scene-wrap {
+    justify-content: center;
+  }
+}
 
   .hero-stats {
     max-width: 100%;

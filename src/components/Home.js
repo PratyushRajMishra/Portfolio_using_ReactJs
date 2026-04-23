@@ -47,11 +47,11 @@ function Home() {
 
             <div className="hero-stats">
               <article>
-                <strong>10+</strong>
+                <strong>3+</strong>
                 <span>Projects Delivered</span>
               </article>
               <article>
-                <strong>3+</strong>
+                <strong>2+</strong>
                 <span>Years of Building</span>
               </article>
               <article>

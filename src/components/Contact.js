@@ -1,13 +1,11 @@
 import React from 'react';
-import { FaMapMarkerAlt, FaWhatsapp, FaLinkedinIn, FaGithub, FaFacebook, FaInstagram } from 'react-icons/fa';
+import { FaMapMarkerAlt, FaWhatsapp, FaLinkedinIn, FaGithub } from 'react-icons/fa';
 import { FiMail } from 'react-icons/fi';
-import { FaXTwitter } from 'react-icons/fa6';
-import { SiIndeed } from 'react-icons/si';
 import ContactForm from './ContactForm';
 
 function Contact() {
   const contacts = [
-    { icon: <FaMapMarkerAlt />, label: 'Location', value: 'Gorakhpur, UP, IN, 273001' },
+    { icon: <FaMapMarkerAlt />, label: 'Location', value: 'New Delhi, INDIA' },
     { icon: <FiMail />, label: 'Email', value: 'pratyushrajmishra70@gmail.com' },
     { icon: <FaWhatsapp />, label: 'WhatsApp', value: '+91 9454969946' },
   ];
@@ -42,27 +40,9 @@ function Contact() {
           <a href="https://github.com/PratyushRajMishra" className="social-icon" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
             <FaGithub />
           </a>
-          <a href="https://www.facebook.com/pratyushraj.mishra.79/" className="social-icon" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-            <FaFacebook />
-          </a>
-          <a href="https://www.instagram.com/__royal__bhumihar__/" className="social-icon" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-            <FaInstagram />
-          </a>
-          <a href="https://twitter.com/_Q_matrix" className="social-icon" target="_blank" rel="noopener noreferrer" aria-label="X">
-            <FaXTwitter />
-          </a>
-          <a
-            href="https://profile.indeed.com/?hl=en_IN&co=IN&from=gnav-homepage&_ga=2.60316969.56304579.1706941903-546330254.1706848408"
-            className="social-icon"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Indeed"
-          >
-            <SiIndeed />
-          </a>
         </div>
 
-        <p className="copyright-text">© Copyright PratyushRajMishra. All Rights Reserved</p>
+        <p className="copyright-text">© Copyright Pratyush Raj. All Rights Reserved</p>
       </div>
     </section>
   );

@@ -1,10 +1,10 @@
 import React from 'react';
 
 const skillGroups = [
-  { title: 'Frontend', items: ['HTML', 'CSS', 'JavaScript', 'React.js'] },
-  { title: 'Backend', items: ['Node.js', 'Firebase Auth'] },
-  { title: 'Database', items: ['MySQL', 'MongoDB', 'Firebase'] },
-  { title: 'Other', items: ['Flutter', 'Java Swing', 'Git'] },
+  { title: 'Frontend', items: ['HTML', 'CSS', 'JavaScript', 'React.js', 'Bootstrap', 'Tailwind'] },
+  { title: 'Backend', items: ['Node.js', 'Firebase', 'Express.js', 'RESTful APIs'] },
+  { title: 'Database', items: ['MySQL', 'MongoDB', 'Firebase', 'PostgreSQL'] },
+  { title: 'Other', items: ['Flutter', 'Java Swing', 'Git', 'GitHub', 'Docker', 'AWS'] },
 ];
 
 function About() {
