@@ -8,7 +8,7 @@ function Contact() {
       <div className="contact-orbit" aria-hidden="true">LET&apos;S MAKE IT REAL · LET&apos;S MAKE IT REAL · </div>
       <div className="container contact-layout">
         <div className="contact-copy" data-reveal>
-          <p className="section-kicker"><span>05</span> Have a project?</p>
+          <p className="section-kicker"><span>06</span> Have a project?</p>
           <h2>Let&apos;s build something<br /><em>worth remembering.</em></h2>
           <p>Tell me what you&apos;re exploring, building, or trying to improve. I&apos;ll reply with thoughts, questions, and a clear next step.</p>
           <a href="mailto:pratyushrajmishra70@gmail.com" className="email-link">pratyushrajmishra70@gmail.com ↗</a>

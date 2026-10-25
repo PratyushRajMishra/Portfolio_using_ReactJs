@@ -11,7 +11,7 @@ function Contribution() {
     <section id="contribution" className="section contribution-section">
       <div className="container contribution-layout">
         <div className="section-heading contribution-heading" data-reveal>
-          <p className="section-kicker"><span>04</span> Open source</p>
+          <p className="section-kicker"><span>05</span> Open source</p>
           <h2>Small tools.<br />Shared freely.</h2>
           <p>I package the useful pieces so other builders don&apos;t have to start from zero.</p>
         </div>

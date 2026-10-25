@@ -56,6 +56,24 @@
   .skill-row { grid-template-columns: 1fr; gap: 9px; padding: 17px 0; }
   .skill-row strong { font-size: 17px; line-height: 1.45; }
 
+  /* Process */
+  .process-header { grid-template-columns: 1fr; gap: 24px; }
+  .process-header .section-heading h2 { font-size: clamp(42px, 12vw, 54px); }
+  .process-intro { font-size: 14px; }
+  .process-console { margin-top: 45px; border-radius: 17px; }
+  .console-bar { height: 46px; padding: 0 13px; grid-template-columns: 1fr auto; }
+  .console-bar span { justify-self: end; font-size: 8px; }
+  .console-bar small { display: none; }
+  .process-flow { grid-template-columns: 1fr; }
+  .process-step { min-height: 285px; padding: 22px 19px; border-right: 0; border-bottom: 1px solid rgba(255,255,255,.09); }
+  .process-step:last-child { border-bottom: 0; }
+  .process-step::after { left: 19px; right: 19px; top: 81px; }
+  .process-step h3 { margin-top: 48px; font-size: 25px; }
+  .process-step > p { font-size: 13px; }
+  .step-output { left: 19px; bottom: 21px; }
+  .engineering-strip { grid-template-columns: 1fr; gap: 13px; margin-top: 28px; padding: 18px 4px; }
+  .engineering-strip strong { font-size: 11px; }
+
   /* Projects */
   .project-heading { margin-bottom: 42px; }
   .project-heading > p:last-child { margin-top: 18px; font-size: 14px; }

@@ -20,7 +20,7 @@ function Project() {
     <section id="project" className="section projects-section">
       <div className="container">
         <div className="section-heading project-heading" data-reveal>
-          <p className="section-kicker"><span>03</span> Selected work</p>
+          <p className="section-kicker"><span>04</span> Selected work</p>
           <h2>Products with a pulse.</h2>
           <p>Independent builds exploring social connection, communication, music, and everyday utility.</p>
         </div>

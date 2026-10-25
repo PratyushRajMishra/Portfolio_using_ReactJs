@@ -4,10 +4,12 @@ import './Signature.css';
 import './Theme.css';
 import './HomeV2.css';
 import './NavbarAvatar.css';
+import './Process.css';
 import './Mobile.css';
 import Navbar from './components/Navbar';
 import Home from './components/Home';
 import About from './components/About';
+import Process from './components/Process';
 import Project from './components/Project';
 import Contribution from './components/Contribution';
 import Contact from './components/Contact';
@@ -55,6 +57,7 @@ function App() {
       <main>
         <Home />
         <About />
+        <Process />
         <Project />
         <Contribution />
         <Contact />
