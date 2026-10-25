@@ -1,110 +1,48 @@
 import React from 'react';
-import { MdOutlineInventory, MdOutlineLocalMall } from "react-icons/md";
-import { GoStopwatch } from "react-icons/go";
-import { IoIosArrowForward } from "react-icons/io";
-import { IoNewspaperOutline } from "react-icons/io5";
-import { LuClipboardEdit } from "react-icons/lu";
+import { FiArrowUpRight } from 'react-icons/fi';
 
-const Project = () => {
-  const featuredProjects = [
-    {
-      title: 'Q',
-      image: '/images/Q.png',
-      stack: 'Flutter, Firebase, Cloud Firestore, Provider, Google Authentication',
-      href: 'https://github.com/PratyushRajMishra/Q_Social_Media',
-    },
-    {
-      title: 'Chat Application',
-      image: '/images/ChatApp.jpg',
-      stack: 'Flutter, Firebase, Cloud Firestore, Git',
-      href: 'https://github.com/PratyushRajMishra/ChatON_Personel_ChatApp_using_Flutter',
-    },
-    {
-      title: 'Music Player',
-      image: '/images/MusicPlayer.png',
-      stack: 'Flutter, Firebase, Cloud Firestore, GetX',
-      href: 'https://github.com/PratyushRajMishra/GrooveX_Music_Player_using_flutter',
-    },
-    {
-      title: 'Listify ToDo App',
-      image: '/images/listify.png',
-      stack: 'Flutter, Firebase, Cloud Firestore, GetX, SharedPreferences',
-      href: 'https://github.com/PratyushRajMishra/Listify_TODO_App_using_Flutter',
-    },
-  ];
+const featured = [
+  { n: '01', title: 'Q', type: 'Social platform', image: '/images/Q.png', stack: 'Flutter · Firebase · Provider · Google Auth', href: 'https://github.com/PratyushRajMishra/Q_Social_Media', tone: 'lime' },
+  { n: '02', title: 'ChatON', type: 'Real-time messaging', image: '/images/ChatApp.jpg', stack: 'Flutter · Firestore · Firebase', href: 'https://github.com/PratyushRajMishra/ChatON_Personel_ChatApp_using_Flutter', tone: 'violet' },
+  { n: '03', title: 'GrooveX', type: 'Music experience', image: '/images/MusicPlayer.png', stack: 'Flutter · GetX · Firebase', href: 'https://github.com/PratyushRajMishra/GrooveX_Music_Player_using_flutter', tone: 'orange' },
+  { n: '04', title: 'Listify', type: 'Focus & productivity', image: '/images/listify.png', stack: 'Flutter · GetX · SharedPreferences', href: 'https://github.com/PratyushRajMishra/Listify_TODO_App_using_Flutter', tone: 'blue' },
+];
 
-  const moreProjects = [
-    {
-      title: 'E-commerce App',
-      icon: <MdOutlineLocalMall />,
-      stack: 'Flutter, Firebase Auth, GetX, Firebase',
-      href: 'https://github.com/PratyushRajMishra/Flutter_Ecommerce_app',
-    },
-    {
-      title: 'Stopwatch',
-      icon: <GoStopwatch />,
-      stack: 'Flutter, GetX',
-      href: 'https://github.com/PratyushRajMishra/CodeAlpha_Stopwatch',
-    },
-    {
-      title: 'NexusNews',
-      icon: <IoNewspaperOutline />,
-      stack: 'React.js, News API, Bootstrap, CSS',
-      href: 'https://github.com/PratyushRajMishra/NexusNews_using_React.js',
-    },
-    {
-      title: 'TextRefine',
-      icon: <LuClipboardEdit />,
-      stack: 'React.js, Bootstrap, React Router, CSS',
-      href: 'https://github.com/PratyushRajMishra/TextRefine_using_React.js',
-    },
-    {
-      title: 'Inventory Management System',
-      icon: <MdOutlineInventory />,
-      stack: 'Java, Java Swing, JDBC, MySQL',
-      href: 'https://github.com/PratyushRajMishra/inventory_management_system',
-    },
-  ];
+const archive = [
+  ['E-commerce App', 'Flutter · Firebase · GetX', 'https://github.com/PratyushRajMishra/Flutter_Ecommerce_app'],
+  ['NexusNews', 'React · News API · Bootstrap', 'https://github.com/PratyushRajMishra/NexusNews_using_React.js'],
+  ['TextRefine', 'React · Router · CSS', 'https://github.com/PratyushRajMishra/TextRefine_using_React.js'],
+  ['Inventory System', 'Java · Swing · JDBC · MySQL', 'https://github.com/PratyushRajMishra/inventory_management_system'],
+];
 
+function Project() {
   return (
     <section id="project" className="section projects-section">
       <div className="container">
-        <div className="section-title-wrap">
-          <p className="section-kicker">Selected Work</p>
-          <h2 className="section-title light">Projects</h2>
+        <div className="section-heading project-heading" data-reveal>
+          <p className="section-kicker"><span>03</span> Selected work</p>
+          <h2>Products with a pulse.</h2>
+          <p>Independent builds exploring social connection, communication, music, and everyday utility.</p>
         </div>
-
-        <h3 className="subheading light">Featured Flutter Projects</h3>
-        <div className="project-grid">
-          {featuredProjects.map((project) => (
-            <a className="project-card" key={project.title} href={project.href} target="_blank" rel="noopener noreferrer">
-              <img src={project.image} alt={project.title} />
-              <div className="project-card-body">
-                <h4>{project.title}</h4>
-                <p>{project.stack}</p>
-              </div>
+        <div className="project-stack">
+          {featured.map((project) => (
+            <a className={`project-case ${project.tone}`} key={project.title} href={project.href} target="_blank" rel="noopener noreferrer" data-reveal>
+              <div className="case-meta"><span>{project.n}</span><span>{project.type}</span></div>
+              <div className="case-copy"><h3>{project.title}</h3><p>{project.stack}</p></div>
+              <div className="case-image"><img src={project.image} alt={`${project.title} project preview`} /></div>
+              <span className="case-arrow"><FiArrowUpRight /></span>
             </a>
           ))}
         </div>
-
-        <div className="glass-panel more-projects">
-          <h3 className="subheading light">More Projects</h3>
-          <div className="project-list">
-            {moreProjects.map((project) => (
-              <a key={project.title} href={project.href} className="project-list-item" target="_blank" rel="noopener noreferrer">
-                <span className="project-list-icon">{project.icon}</span>
-                <span className="project-list-content">
-                  <strong>{project.title}</strong>
-                  <small>{project.stack}</small>
-                </span>
-                <IoIosArrowForward />
-              </a>
-            ))}
-          </div>
+        <div className="archive" data-reveal>
+          <div className="archive-title"><span>More experiments</span><span>View source ↗</span></div>
+          {archive.map(([title, stack, href], index) => (
+            <a href={href} target="_blank" rel="noopener noreferrer" key={title}><span>0{index + 5}</span><strong>{title}</strong><small>{stack}</small><FiArrowUpRight /></a>
+          ))}
         </div>
       </div>
     </section>
   );
-};
+}
 
 export default Project;

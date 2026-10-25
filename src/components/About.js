@@ -1,70 +1,33 @@
 import React from 'react';
 
-const skillGroups = [
-  { title: 'Frontend', items: ['HTML', 'CSS', 'JavaScript', 'React.js', 'Bootstrap', 'Tailwind'] },
-  { title: 'Backend', items: ['Node.js', 'Firebase', 'Express.js', 'RESTful APIs'] },
-  { title: 'Database', items: ['MySQL', 'MongoDB', 'Firebase', 'PostgreSQL'] },
-  { title: 'Other', items: ['Flutter', 'Java Swing', 'Git', 'GitHub', 'Docker', 'AWS'] },
+const skills = [
+  ['Interface', 'React.js · JavaScript · Tailwind · CSS'],
+  ['Systems', 'Node.js · Express · REST APIs · Docker'],
+  ['Mobile', 'Flutter · Dart · Firebase · GetX'],
+  ['Data', 'MongoDB · PostgreSQL · MySQL · Firestore'],
 ];
 
 function About() {
-  const expertise = [
-    {
-      title: 'Frontend Developer',
-      text:
-        "I build polished, responsive interfaces in React.js with a strong focus on usability and detail. Projects like TextRefine and NewsReactapp reflect my approach to clean UI architecture and smooth user flows.",
-    },
-    {
-      title: 'Backend Developer',
-      text:
-        'I design API-first backends with Node.js and build scalable service layers that keep applications fast and reliable. My work covers data modeling, integrations, and robust communication between frontend and backend.',
-    },
-    {
-      title: 'Flutter Developer',
-      text:
-        'I develop cross-platform mobile experiences with Flutter, from social and chat apps to music and e-commerce products. I enjoy translating product ideas into smooth, performant apps across devices.',
-    },
-  ];
-
   return (
-    <section id="about" className="section">
+    <section id="about" className="section about-section">
       <div className="container">
-        <div className="section-title-wrap">
-          <p className="section-kicker">Who I Am</p>
-          <h2 className="section-title">About Me</h2>
+        <div className="section-heading" data-reveal>
+          <p className="section-kicker"><span>02</span> A little context</p>
+          <h2>Engineer by training.<br /><em>Maker</em> by instinct.</h2>
         </div>
-
-        <div className="glass-panel about-intro">
-          <p>
-            I'm <strong>Pratyush Raj</strong>, a software developer passionate about building products that are practical, scalable, and enjoyable to
-            use. With a strong foundation in computer science and hands-on experience across full-stack and Flutter projects, I love solving real-world
-            problems through thoughtful engineering and design.
-          </p>
+        <div className="about-layout">
+          <div className="about-statement" data-reveal>
+            <p>I build products from the interface all the way down to the data layer. My sweet spot is where solid engineering meets a tactile, thoughtful experience.</p>
+            <p className="about-note">I&apos;m especially drawn to products that remove friction, make information clearer, or simply feel delightful to use.</p>
+          </div>
+          <div className="principles" data-reveal>
+            <article><span>01</span><h3>Clarity before cleverness</h3><p>Simple flows, legible systems, and decisions users never have to second-guess.</p></article>
+            <article><span>02</span><h3>Motion with purpose</h3><p>Animation should guide attention and communicate state—not become visual noise.</p></article>
+            <article><span>03</span><h3>Built to last</h3><p>Maintainable code, responsive layouts, and resilient behavior from the start.</p></article>
+          </div>
         </div>
-
-        <div className="expertise-grid">
-          {expertise.map((item) => (
-            <article className="glass-panel expertise-card" key={item.title}>
-              <h3>{item.title}</h3>
-              <p>{item.text}</p>
-            </article>
-          ))}
-        </div>
-
-        <h3 className="subheading">Skills Snapshot</h3>
-        <div className="skill-grid">
-          {skillGroups.map((group) => (
-            <div className="glass-panel skill-card" key={group.title}>
-              <h4>{group.title}</h4>
-              <div className="chip-wrap">
-                {group.items.map((item) => (
-                  <span className="skill-chip" key={item}>
-                    {item}
-                  </span>
-                ))}
-              </div>
-            </div>
-          ))}
+        <div className="skill-ticker" data-reveal>
+          {skills.map(([title, items]) => <div className="skill-row" key={title}><span>{title}</span><strong>{items}</strong></div>)}
         </div>
       </div>
     </section>

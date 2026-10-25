@@ -28,22 +28,21 @@ function ContactForm() {
     const object = Object.fromEntries(formData);
     const json = JSON.stringify(object);
 
-    const res = await fetch("https://api.web3forms.com/submit", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-      },
-      body: json,
-    }).then((res) => res.json());
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: json,
+      }).then((response) => response.json());
 
-    if (res.success) {
-      console.log("Success", res);
-      formRef.current.reset(); // Reset the form
-      setSubmitted(true); // Set the submitted state to true
+      if (!res.success) throw new Error("Submission failed");
+      formRef.current.reset();
+      setSubmitted(true);
+    } catch (submitError) {
+      setError("Something went wrong. Please email me directly instead.");
+    } finally {
+      setSubmitting(false);
     }
-
-    setSubmitting(false); // Reset submitting state
   };
 
   return (
@@ -51,7 +50,7 @@ function ContactForm() {
       {submitted ? (
         <div className="thank-you-message">
           <h3>Thank you for your submission!</h3>
-          <p>We&apos;ll get back to you soon.</p>
+          <p>I&apos;ll get back to you soon.</p>
         </div>
       ) : (
         <form className="contact-form" onSubmit={onSubmit} ref={formRef}>
@@ -84,6 +83,7 @@ function ContactForm() {
               name="message"
               placeholder="Message"
               rows="5"
+                aria-label="Your message"
               disabled={submitting}
             ></textarea>
           </div>

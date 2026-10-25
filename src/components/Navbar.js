@@ -1,8 +1,43 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, animateScroll as scroll } from 'react-scroll';
+import { FiMoon, FiSun } from 'react-icons/fi';
 
-function Navbar() {
+const links = [
+  { to: 'home', label: 'Home' },
+  { to: 'about', label: 'About' },
+  { to: 'project', label: 'Projects' },
+  { to: 'contribution', label: 'Contribution' },
+  { to: 'contact', label: 'Contact' },
+];
+
+function Navbar({ theme, onThemeToggle }) {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState('home');
+
+  useEffect(() => {
+    const updateActiveSection = () => {
+      const pageBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 8;
+      if (pageBottom) {
+        setActiveSection('contact');
+        return;
+      }
+
+      let current = 'home';
+      links.forEach(({ to }) => {
+        const section = document.getElementById(to);
+        if (section && section.getBoundingClientRect().top <= 130) current = to;
+      });
+      setActiveSection(current);
+    };
+
+    updateActiveSection();
+    window.addEventListener('scroll', updateActiveSection, { passive: true });
+    window.addEventListener('resize', updateActiveSection);
+    return () => {
+      window.removeEventListener('scroll', updateActiveSection);
+      window.removeEventListener('resize', updateActiveSection);
+    };
+  }, []);
 
   const scrollToTop = () => {
     scroll.scrollToTop();
@@ -18,22 +53,16 @@ function Navbar() {
     link.click();
   };
 
-  const links = [
-    { to: 'home', label: 'Home' },
-    { to: 'about', label: 'About' },
-    { to: 'project', label: 'Projects' },
-    { to: 'contribution', label: 'Contribution' },
-    { to: 'contact', label: 'Contact' },
-  ];
-
   return (
     <header className="site-header">
-      <nav className="site-nav container">
+      <nav className="site-nav">
         <button className="brand-button" type="button" onClick={scrollToTop}>
-          <span className="brand-mark" aria-hidden="true"></span>
+          <span className="brand-mark brand-image" aria-hidden="true">
+            <img src="/images/pratyush-sketch.png" alt="" />
+          </span>
           <span className="brand-text">
             <strong>Pratyush Raj</strong>
-            <small>Software Engineer</small>
+            <small>Creative developer</small>
           </span>
         </button>
 
@@ -42,10 +71,8 @@ function Navbar() {
             {links.map((item) => (
               <li key={item.to}>
                 <Link
-                  className="nav-link-item"
-                  activeClass="active"
+                  className={`nav-link-item ${activeSection === item.to ? 'active' : ''}`}
                   to={item.to}
-                  spy={true}
                   smooth={true}
                   offset={-80}
                   duration={300}
@@ -59,8 +86,19 @@ function Navbar() {
         </div>
 
         <div className="nav-actions">
+          <button
+            className="theme-toggle"
+            type="button"
+            onClick={onThemeToggle}
+            aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
+            title={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
+          >
+            <span className="theme-icon sun-icon"><FiSun /></span>
+            <span className="theme-icon moon-icon"><FiMoon /></span>
+            <span className="theme-knob" />
+          </button>
           <button className="resume-btn nav-resume-btn" type="button" onClick={handleDownloadResume}>
-            Resume
+            Résumé ↗
           </button>
           <button
             className={`menu-toggle ${menuOpen ? 'is-open' : ''}`}

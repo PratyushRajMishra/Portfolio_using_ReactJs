@@ -1,138 +1,71 @@
 import React, { useRef, useState } from 'react';
-import { FaLinkedinIn, FaGithub } from 'react-icons/fa';
-import { FiArrowDownRight, FiCode, FiLayers, FiSmartphone } from 'react-icons/fi';
+import { FaGithub, FaLinkedinIn } from 'react-icons/fa';
+import { FiArrowDownRight } from 'react-icons/fi';
 import { Link } from 'react-scroll';
 
 function Home() {
-  const heroRef = useRef(null);
-  const [tiltStyle, setTiltStyle] = useState({});
+  const visualRef = useRef(null);
+  const [visualTransform, setVisualTransform] = useState({});
 
-  const handleHeroMove = (event) => {
-    if (!heroRef.current || window.innerWidth < 992) return;
-    const rect = heroRef.current.getBoundingClientRect();
-    const x = event.clientX - rect.left;
-    const y = event.clientY - rect.top;
-    const rotateY = ((x / rect.width) - 0.5) * 3;
-    const rotateX = (0.5 - (y / rect.height)) * 2.6;
-
-    setTiltStyle({
-      transform: `perspective(1200px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`,
-    });
-  };
-
-  const resetHeroTilt = () => {
-    setTiltStyle({
-      transform: 'perspective(1200px) rotateX(0deg) rotateY(0deg)',
-    });
+  const handleMove = (event) => {
+    if (!visualRef.current || window.innerWidth < 900) return;
+    const rect = visualRef.current.getBoundingClientRect();
+    const x = (event.clientX - rect.left) / rect.width - 0.5;
+    const y = (event.clientY - rect.top) / rect.height - 0.5;
+    setVisualTransform({ transform: `perspective(1100px) rotateX(${-y * 5}deg) rotateY(${x * 7}deg) translate3d(${x * 7}px, ${y * 7}px, 0)` });
   };
 
   return (
-    <section id="home" className="section hero-section">
-      <div
-        ref={heroRef}
-        className="container hero-card"
-        onMouseMove={handleHeroMove}
-        onMouseLeave={resetHeroTilt}
-        style={tiltStyle}
-      >
-        <div className="hero-main">
-          <div className="hero-left">
-            <div className="hero-copy">
-              <p className="eyebrow">Hi, I&apos;m Pratyush Raj</p>
-              <h1>
-                Building products with <span>clarity</span>, speed, and impact.
-              </h1>
-              <p className="subtitle">Full-stack and Flutter developer crafting modern, scalable, and user-focused digital experiences.</p>
-            </div>
+    <section id="home" className="cover-hero">
+      <div className="cover-rail rail-left" aria-hidden="true">
+        <span>PR / PORTFOLIO 2026</span><i /><span>NEW DELHI, INDIA</span>
+      </div>
+      <div className="cover-rail rail-right" aria-hidden="true">
+        <span>BUILD</span><span>REFINE</span><span>SHIP</span>
+      </div>
 
-            <div className="hero-stats">
-              <article>
-                <strong>3+</strong>
-                <span>Projects Delivered</span>
-              </article>
-              <article>
-                <strong>2+</strong>
-                <span>Years of Building</span>
-              </article>
-              <article>
-                <strong>Open Source</strong>
-                <span>Package Contributor</span>
-              </article>
-            </div>
+      <div className="cover-canvas">
+        <div className="cover-intro" data-reveal>
+          <span className="cover-index">01 — INTRODUCTION</span>
+          <p>Software developer<br />web · mobile · backend</p>
+        </div>
 
-            <div className="hero-badges">
-              <span>
-                <FiCode />
-                React UI
-              </span>
-              <span>
-                <FiLayers />
-                Node APIs
-              </span>
-              <span>
-                <FiSmartphone />
-                Flutter Apps
-              </span>
-            </div>
+        <div className="cover-title" aria-label="Software developer">
+          <span className="title-line line-solid" data-reveal>SOFTWARE</span>
+          <span className="title-line line-outline" data-reveal>DEVELOPER</span>
+        </div>
 
-            <div className="hero-cta">
-              <Link className="primary-cta" to="project" smooth={true} offset={-80} duration={350}>
-                Explore Projects <FiArrowDownRight />
-              </Link>
-              <Link className="ghost-cta" to="contact" smooth={true} offset={-80} duration={350}>
-                Let&apos;s Connect
-              </Link>
-            </div>
+        <div
+          ref={visualRef}
+          className="cover-portrait"
+          onMouseMove={handleMove}
+          onMouseLeave={() => setVisualTransform({ transform: 'perspective(1100px) rotateX(0) rotateY(0)' })}
+          style={visualTransform}
+          data-reveal
+        >
+          <div className="portrait-sun" aria-hidden="true"><span>PR</span></div>
+          <div className="portrait-rings" aria-hidden="true"><i /><i /><i /></div>
+          <div className="portrait-strokes" aria-hidden="true"><i /><i /><i /></div>
+          <img src="/images/pratyush-sketch.png" alt="Hand-drawn portrait of Pratyush Raj" />
+        </div>
 
-            <div className="hero-social">
-              <a href="https://www.linkedin.com/in/pratyush-raj-/" target="_blank" rel="noopener noreferrer" className="social-pill">
-                <FaLinkedinIn />
-                LinkedIn
-              </a>
-              <a href="https://github.com/PratyushRajMishra" target="_blank" rel="noopener noreferrer" className="social-pill">
-                <FaGithub />
-                GitHub
-              </a>
-            </div>
-          </div>
+        <div className="cover-copy" data-reveal>
+          <p className="cover-name">PRATYUSH RAJ</p>
+          <h1>I develop reliable web and mobile products with <em>clean code</em> and thoughtful experiences.</h1>
+        </div>
 
-          <div className="hero-scene-wrap" aria-hidden="true">
-            <div className="hero-visual">
-              <div className="hero-visual-orb orb-one"></div>
-              <div className="hero-visual-orb orb-two"></div>
-              <div className="hero-visual-grid"></div>
-              <div className="hero-profile-panel">
-                <img src="images/picture.png" alt="Pratyush Raj" className="profile-photo" />
-                <div className="hero-profile-copy">
-                  <strong>Pratyush Raj</strong>
-                  <span>Full-stack & Flutter Developer</span>
-                </div>
-                
-              </div>
-              
-              <div className="hero-visual-card card-skill-1">
-                <p>Languages</p>
-                <strong>JavaScript, Dart, Python</strong>
-              </div>
+        <div className="cover-actions" data-reveal>
+          <Link className="cover-primary" to="project" smooth offset={-70} duration={500}>Explore work <FiArrowDownRight /></Link>
+          <Link className="cover-contact" to="contact" smooth offset={-70} duration={500}>Let&apos;s work together ↗</Link>
+        </div>
 
-              <div className="hero-visual-card card-skill-2">
-                <p>Frameworks</p>
-                <strong>React, Node.js, Flutter</strong>
-              </div>
-
-              <div className="hero-visual-card card-skill-3">
-                <p>Tools & DB</p>
-                <strong>Git, Firebase, MongoDB</strong>
-              </div>
-              
-              <div className="hero-visual-card card-focus">
-                <p>Current Focus</p>
-                <strong>Scalable products with polished UX</strong>
-              </div>
-            </div>
-          </div>
+        <div className="cover-social" data-reveal>
+          <a href="https://github.com/PratyushRajMishra" target="_blank" rel="noopener noreferrer"><FaGithub /> GH</a>
+          <a href="https://www.linkedin.com/in/pratyush-raj-/" target="_blank" rel="noopener noreferrer"><FaLinkedinIn /> IN</a>
         </div>
       </div>
+
+      <div className="cover-ticker" aria-hidden="true"><div>REACT · FLUTTER · NODE · FIREBASE · PRODUCT THINKING · INTERACTION · REACT · FLUTTER · NODE · FIREBASE · PRODUCT THINKING · INTERACTION · </div></div>
     </section>
   );
 }
